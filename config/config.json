@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "PasswordRoot",
-    "database": "exampledb",
+    "database": "HalfBaked_db",
     "host": "localhost",
     "dialect": "mysql"
   },
