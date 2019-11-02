@@ -1,6 +1,6 @@
-//creating a howToMakeIt table in my HalfBaked db
+//creating a Recipe table in my HalfBaked db
 module.exports = function(sequelize, DataTypes) {
-    var howToMakeIt = sequelize.define("howToMakeIt", {
+    var Recipe = sequelize.define("Recipe", {
       //Name of Recipe
         name: {
         type: DataTypes.STRING,
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       //background/tips/tricks to change it make it better
       story: {
-        type: DataTypes.BLOB,
+        type: DataTypes.BLOG,
         allowNull: false,
         validate: {
           len: [1]
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       //this should be Ingredients and their measurements
       ingredients: { 
-        type: DataTypes.BLOB,
+        type: DataTypes.BLOG,
         allowNull: false,
         validate: {
             len: [1]
@@ -40,19 +40,18 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
             len: [1]
           }
+      },
+      //this should be recipe timestamp
+      baked: {
+        type: DataTypes.DATEONLY,
+        //do I need this here?
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
       }
     });
-  
-    howToMakeIt.associate = function(models) {
-      // We're saying that a howToMakeIt should belong to an recipeSnipIt
-      // A HowToMakeIt can't be created without an recipeSnipIt due to the foreign key constraint
-      howToMakeIt.belongsTo(models.recipeSnipIt, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
-  
-    return howToMakeIt;
+
+    return Recipe;
   };
   

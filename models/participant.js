@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var participant = sequelize.define("Participant", {
+    var Participant = sequelize.define("Participant", {
       // Giving the Participant model a name of type STRING
       //Name of Participant
       name: {
@@ -27,6 +27,6 @@ module.exports = function(sequelize, DataTypes) {
       });
     };
   
-    return participant;
+    return Participant;
   };
   

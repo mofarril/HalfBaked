@@ -1,6 +1,6 @@
 //creating a howToMakeIt table in my HalfBaked db
 module.exports = function(sequelize, DataTypes) {
-    var event = sequelize.define("bakeOffs", {
+    var Event = sequelize.define("Event", {
       //Name of event
         name: {
         type: DataTypes.STRING,
@@ -55,6 +55,6 @@ module.exports = function(sequelize, DataTypes) {
       });
     };
   
-    return event;
+    return Event;
   };
   
